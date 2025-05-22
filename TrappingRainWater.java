@@ -18,27 +18,9 @@ public class TrappingRainWater {
             }
             return trappedRainWater;
         }
-        public static int buyAndSellStock(int prices[]){
-            int buyPrice=Integer.MAX_VALUE;
-            int maxProfit=0;
-            int n=prices.length;
-            for (int i = 0; i<n;i++){
-            if(buyPrice<prices[i]){
-            int profit=prices[i]-buyPrice;
-            maxProfit=Math.max(maxProfit,profit);
-            }
-            else{
-                buyPrice=prices[i];
-            }
-        }
-            return maxProfit;
-
-        }
         public static void main(String[]args){
             int height[]={4,2,0,6,3,2,5};
-            int prices[]={7,1,5,3,6,4};
             System.out.println(trappedRainWater(height));
-            System.out.println(buyAndSellStock(prices));
         }
     }
 
