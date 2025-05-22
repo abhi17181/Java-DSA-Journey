@@ -2,7 +2,7 @@ import java.util.*;
 public class DArray {
     public static boolean Search(int matrix[][], int key){
         for(int i=0;i<matrix.length;i++){
-            for(int j=0;j<matrix.length;j++){
+            for(int j=0;j<matrix[0].length;j++){
                 if(matrix[i][j]==key){
                     System.out.println("found at cell ("+ i + ","+ j + ")");
                     return true;
