@@ -1,4 +1,4 @@
-public class buyAndSellStocks {
+public class BuyAndSellStocks {
     public static int buyAndSellStock(int prices[]){
             int buyPrice=Integer.MAX_VALUE;
             int maxProfit=0;
