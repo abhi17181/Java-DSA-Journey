@@ -1,1 +1,1 @@
-# Java-Journey
+# Java-DSA-Journey
