@@ -1,4 +1,4 @@
-public class tilingproblem {
+public class Tilingproblem {
     public static int tilingProblem(int n){
         if(n==0 || n==1){
             return 1;
