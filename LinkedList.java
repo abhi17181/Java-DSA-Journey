@@ -1,54 +1,57 @@
-public class LinkedList{
-    public static class Node{
+public class LinkedList {
+    public static class Node {
         int data;
         Node next;
-        public Node(int data){
-            this.data=data;
-            this.next=null;
+
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
         }
     }
+
     public static Node head;
-    public static Node tail;
-    public void addFirst(int data){
-        Node newNode=new Node(data);
-        if(head==null){
-            head=tail=newNode;
+
+    // Add at end for testing
+    public void addLast(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
             return;
         }
-        newNode.next=head;
-        head=newNode;
-    }
-    public void addLast(int data){
-        Node newNode=new Node(data);
-        if(head==null){
-            head=tail=newNode;
-            return;
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
         }
-        tail.next=newNode;
-        tail=newNode;
+        temp.next = newNode;
     }
-    public void print(){
-        if(head==null){
-            System.out.println("LinkedList is Empty");
-            return;
-        }
-        Node temp=head;
-        while(temp!=null){
-            System.out.print(temp.data+"->");
-            temp=temp.next;
-        }
-        System.out.println("null");
+
+    // Recursive helper to search for key
+    public int searchRecursive(Node head, int key) {
+        if (head == null) return -1;
+        if (head.data == key) return 0;
+
+        int idx = searchRecursive(head.next, key);
+        return (idx == -1) ? -1 : idx + 1;
     }
-    public static void main(String[]args){
-        LinkedList ll=new LinkedList();
-        ll.print();
-        ll.addFirst(2);
-        ll.print();
-        ll.addFirst(1);
-        ll.print();
-        ll.addLast(3);
-        ll.print();
-        ll.addLast(4);
-        ll.print();
+
+    public int search(int key) {
+        return searchRecursive(head, key);
+    }
+
+    // Main for testing
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.addLast(10);
+        ll.addLast(20);
+        ll.addLast(30);
+        ll.addLast(40);
+
+        int key = 30;
+        int position = ll.search(key);
+        System.out.println("Key " + key + " found at position: " + position); // Output: 2
+
+        key = 50;
+        position = ll.search(key);
+        System.out.println("Key " + key + " found at position: " + position); // Output: -1
     }
 }
