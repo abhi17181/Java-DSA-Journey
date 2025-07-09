@@ -1,4 +1,3 @@
-
 import java.util.*;
 public class Sk{
     public static void pushAtBottom(Stack<Integer> s,int data){
