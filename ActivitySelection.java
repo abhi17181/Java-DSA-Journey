@@ -3,7 +3,6 @@ public class Solution{
     public static void main(String[]args){
         int start[]={10,12,20};
         int end[]={20,25,30};
-        int activities[][]=new int[start.length][3];
         int maxAct=0;
         ArrayList<Integer> ans=new ArrayList<>();
         maxAct=1;
