@@ -10,37 +10,6 @@ public class LowestCommonAncestor {
             this.right=null;
         }
     }
-    public static boolean getPath(Node root,int n,ArrayList<Node> path){
-        if(root==null){
-            return false;
-        }
-        path.add(root);
-        if(root.data==n){
-            return true;
-        }
-        boolean foundLeft=getPath(root.left,n,path);
-        boolean foundRight=getPath(root.right,n,path);
-        if(foundLeft||foundRight){
-            return true;
-        }
-        path.remove(path.size()-1);
-        return false;
-    }
-    public static Node LCA(Node root,int n1,int n2){
-        ArrayList<Node> path1=new ArrayList<>();
-        ArrayList<Node> path2=new ArrayList<>();
-        getPath(root,n1,path1);
-        getPath(root,n2,path2);
-        //last Common Ancestor
-        int i=0;
-        for(; i<path1.size() && i<path2.size();i++){
-            if(path1.get(i)!=path2.get(i)){
-                break;
-            }
-        }
-        Node LCA=path1.get(i-1);
-        return LCA;
-    }
     public static Node lca2(Node root,int n1,int n2){
         if(root==null||root.data==n1||root.data==n2){
             return root;
