@@ -1,4 +1,4 @@
-public class SearchOperation {
+public class PrintInRange {
     static class Node{
         int data;
         Node left;
