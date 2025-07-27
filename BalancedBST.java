@@ -13,7 +13,7 @@ public class BalancedBST {
         if(si>ei){
             return null;
         }
-        int mid=(si+ei)/2;
+        int mid=si+(ei-si)/2;
         Node root=new Node(arr[mid]);
         root.left=BalBST(arr,si,mid-1);
         root.right=BalBST(arr,mid+1,ei);
